@@ -10,11 +10,11 @@ const Public = () => {
       </header>
       <main className="public__main">
         <p>
-          Located in Beautiful Downtown Foo City, Dan D. Repairs provides a
+          Located in Beautiful Downtown Foo City, EaseShope. Repairs provides a
           trained staff ready to meet your tech repair needs.
         </p>
         <address className="public__addr">
-          EaseShope. Repairs
+          EaseShope. Repair
           <br />
           555 Foo Drive
           <br />
