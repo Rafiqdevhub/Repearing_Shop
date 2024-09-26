@@ -10,7 +10,7 @@ const createUser = asyncHandler(async (req, res) => {
   }
   const duplicate = await User.findOne({ username }).lean().exec();
   if (duplicate) {
-    return res.status(409).json({ message: "Duplicate username" });
+    return res.status(409).json({ message: "User already exist." });
   }
   const hashedPwd = await bcrypt.hash(password, 10);
   const userObject = { username, password: hashedPwd, roles };
