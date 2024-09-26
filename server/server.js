@@ -9,10 +9,10 @@ app.use("/", express.static(path.join(__dirname, "public")));
 
 connectDB();
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+// Home route
+app.use("/", require("./routes/root"));
 
+// 404 route
 app.all("*", (req, res) => {
   res.status(404);
   if (req.accepts("html")) {
