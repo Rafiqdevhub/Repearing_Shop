@@ -8,16 +8,16 @@ app.use(express.json());
 const PORT = process.env.PORT || 3000;
 app.use("/", express.static(path.join(__dirname, "public")));
 
-connectDB();
-
 // Home route
 app.use("/", require("./routes/root"));
 
 // User route
 app.use("/users", require("./routes/userRoute"));
+
+// Note route
 app.use("/notes", require("./routes/noteRoute"));
 
-// 404 route
+// page not found
 app.all("*", (req, res) => {
   res.status(404);
   if (req.accepts("html")) {
@@ -30,5 +30,6 @@ app.all("*", (req, res) => {
 });
 
 app.listen(PORT, () => {
+  connectDB();
   console.log(`Server is running on http://localhost:${PORT}`);
 });
