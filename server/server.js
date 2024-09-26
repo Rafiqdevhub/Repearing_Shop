@@ -15,6 +15,7 @@ app.use("/", require("./routes/root"));
 
 // User route
 app.use("/users", require("./routes/userRoute"));
+app.use("/notes", require("./routes/noteRoute"));
 
 // 404 route
 app.all("*", (req, res) => {
