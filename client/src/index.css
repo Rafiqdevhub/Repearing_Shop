@@ -58,7 +58,7 @@ body {
   min-height: 100vh;
   background-color: var(--BGCOLOR);
   color: var(--COLOR);
-  background-image: url("../public//background.avif");
+  background-image: url("background.avif");
   background-size: cover;
   background-position: top right;
   background-blend-mode: multiply;
