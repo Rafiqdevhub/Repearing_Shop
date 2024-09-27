@@ -37,21 +37,17 @@ export const notesApiSlice = apiSlice.injectEndpoints({
 
 export const { useGetNotesQuery } = notesApiSlice;
 
-// returns the query result object
 export const selectNotesResult = notesApiSlice.endpoints.getNotes.select();
 
-// creates memoized selector
 const selectNotesData = createSelector(
   selectNotesResult,
-  (notesResult) => notesResult.data // normalized state object with ids & entities
+  (notesResult) => notesResult.data
 );
 
-//getSelectors creates these selectors and we rename them with aliases using destructuring
 export const {
   selectAll: selectAllNotes,
   selectById: selectNoteById,
   selectIds: selectNoteIds,
-  // Pass in a selector that returns the notes slice of state
 } = notesAdapter.getSelectors(
   (state) => selectNotesData(state) ?? initialState
 );
