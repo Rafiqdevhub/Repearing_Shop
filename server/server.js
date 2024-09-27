@@ -1,12 +1,15 @@
 const express = require("express");
 require("dotenv").config();
 const connectDB = require("./config/dbConnection");
+const cors = require("cors");
+const corsOptions = require("./cors/corsOption");
 const path = require("path");
 
 const app = express();
 app.use(express.json());
 const PORT = process.env.PORT || 3000;
 app.use("/", express.static(path.join(__dirname, "public")));
+app.use(cors(corsOptions));
 
 // Home route
 app.use("/", require("./routes/root"));
