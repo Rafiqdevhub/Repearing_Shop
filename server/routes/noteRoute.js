@@ -5,7 +5,10 @@ const {
   deleteNotes,
   createNote,
 } = require("../controllers/noteController");
+const verifyJWT = require("../middleware/verifyJwt");
 const router = express.Router();
+
+router.use(verifyJWT);
 
 router.post("/", createNote);
 router.get("/", getNotes);
