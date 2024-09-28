@@ -5,7 +5,6 @@ import Login from "./pages/Login";
 import DashLayout from "./components/DashLayout";
 import Welcome from "./pages/Welcome";
 import NotesList from "./notes/NotesList";
-import UserList from "./users/UserList";
 import EditNote from "./notes/EditNote";
 import NewNote from "./notes/NewNote";
 import EditUser from "./users/EditUser";
