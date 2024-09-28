@@ -6,6 +6,10 @@ import DashLayout from "./components/DashLayout";
 import Welcome from "./pages/Welcome";
 import NotesList from "./notes/NotesList";
 import UserList from "./users/UserList";
+import EditNote from "./notes/EditNote";
+import NewNote from "./notes/NewNote";
+import EditUser from "./users/EditUser";
+import NewUserForm from "./users/NewUserForm";
 
 const App = () => {
   return (
@@ -17,9 +21,13 @@ const App = () => {
           <Route index element={<Welcome />} />
           <Route path="notes">
             <Route index element={<NotesList />} />
+            <Route path=":id" element={<EditNote />} />
+            <Route path="new" element={<NewNote />} />
           </Route>
           <Route path="users">
             <Route index element={<UserList />} />
+            <Route path=":id" element={<EditUser />} />
+            <Route path="new" element={<NewUserForm />} />
           </Route>
         </Route>
       </Route>
