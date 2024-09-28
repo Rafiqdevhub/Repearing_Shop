@@ -14,6 +14,9 @@ app.use(cors(corsOptions));
 // Home route
 app.use("/", require("./routes/root"));
 
+// Auth route
+app.use("/auth", require("./routes/authRoute"));
+
 // User route
 app.use("/users", require("./routes/userRoute"));
 
