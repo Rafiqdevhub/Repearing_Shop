@@ -11,6 +11,7 @@ import EditUser from "./users/EditUser";
 import NewUserForm from "./users/NewUserForm";
 import Prefetch from "./pages/Prefetch";
 import UsersList from "./users/UserList";
+import PersistLogin from "./pages/PersistLogin";
 
 const App = () => {
   return (
@@ -19,23 +20,25 @@ const App = () => {
         <Route index element={<Public />} />
         <Route path="login" element={<Login />} />
 
-        <Route element={<Prefetch />}>
-          <Route path="dash" element={<DashLayout />}>
-            <Route index element={<Welcome />} />
+        <Route element={<PersistLogin />}>
+          <Route element={<Prefetch />}>
+            <Route path="dash" element={<DashLayout />}>
+              <Route index element={<Welcome />} />
 
-            <Route path="users">
-              <Route index element={<UsersList />} />
-              <Route path=":id" element={<EditUser />} />
-              <Route path="new" element={<NewUserForm />} />
-            </Route>
+              <Route path="users">
+                <Route index element={<UsersList />} />
+                <Route path=":id" element={<EditUser />} />
+                <Route path="new" element={<NewUserForm />} />
+              </Route>
 
-            <Route path="notes">
-              <Route index element={<NotesList />} />
-              <Route path=":id" element={<EditNote />} />
-              <Route path="new" element={<NewNote />} />
+              <Route path="notes">
+                <Route index element={<NotesList />} />
+                <Route path=":id" element={<EditNote />} />
+                <Route path="new" element={<NewNote />} />
+              </Route>
             </Route>
+            {/* End Dash */}
           </Route>
-          {/* End Dash */}
         </Route>
       </Route>
     </Routes>
