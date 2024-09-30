@@ -14,16 +14,16 @@ import UsersList from "./users/UserList";
 import PersistLogin from "./pages/PersistLogin";
 import RequireAuth from "./app/auth/RequiredAuth";
 import { ROLES } from "./config/roles";
+import useTitle from "./hooks/useTitle";
 
 const App = () => {
+  useTitle("EaseRepairs");
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        {/* public routes */}
         <Route index element={<Public />} />
         <Route path="login" element={<Login />} />
 
-        {/* Protected Routes */}
         <Route element={<PersistLogin />}>
           <Route
             element={<RequireAuth allowedRoles={[...Object.values(ROLES)]} />}
@@ -50,11 +50,9 @@ const App = () => {
                   <Route path="new" element={<NewNote />} />
                 </Route>
               </Route>
-              {/* End Dash */}
             </Route>
           </Route>
         </Route>
-        {/* End Protected Routes */}
       </Route>
     </Routes>
   );
