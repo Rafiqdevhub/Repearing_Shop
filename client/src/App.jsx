@@ -17,6 +17,7 @@ import { ROLES } from "./config/roles";
 import useTitle from "./hooks/useTitle";
 
 const App = () => {
+  // Set the title of the page to "EaseRepairs"
   useTitle("EaseRepairs");
   return (
     <Routes>
